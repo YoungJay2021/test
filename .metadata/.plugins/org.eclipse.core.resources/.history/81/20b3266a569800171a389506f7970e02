@@ -1,0 +1,97 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextPane;
+import java.awt.SystemColor;
+import javax.swing.JPasswordField;
+
+
+public class zhuce {
+
+	private JFrame frame;
+	private JTextField textField;
+	private JPasswordField passwordField;
+	private JPasswordField passwordField_1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					zhuce window = new zhuce();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public zhuce() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 399, 356);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JButton button = new JButton("\u8FD4\u56DE");
+		button.setBounds(46, 229, 90, 33);
+		frame.getContentPane().add(button);
+		
+		JButton button_1 = new JButton("\u6CE8\u518C");
+		button_1.setBounds(171, 229, 96, 33);
+		frame.getContentPane().add(button_1);
+		
+		textField = new JTextField();
+		textField.setBounds(120, 69, 149, 21);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JLabel label = new JLabel("\u6CE8\u518C\u754C\u9762");
+		label.setFont(new Font("ËÎÌו", Font.PLAIN, 24));
+		label.setBounds(134, 10, 178, 33);
+		frame.getContentPane().add(label);
+		
+		JTextPane textPane = new JTextPane();
+		textPane.setBackground(SystemColor.menu);
+		textPane.setText("\u7528\u6237\u540D:");
+		textPane.setBounds(43, 69, 51, 21);
+		frame.getContentPane().add(textPane);
+		
+		JTextPane textPane_1 = new JTextPane();
+		textPane_1.setBackground(SystemColor.menu);
+		textPane_1.setText("\u5BC6\u7801:");
+		textPane_1.setBounds(43, 115, 51, 21);
+		frame.getContentPane().add(textPane_1);
+		
+		JTextPane textPane_2 = new JTextPane();
+		textPane_2.setBackground(SystemColor.menu);
+		textPane_2.setText("\u91CD\u590D\u5BC6\u7801:");
+		textPane_2.setBounds(43, 159, 67, 21);
+		frame.getContentPane().add(textPane_2);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(120, 115, 149, 21);
+		frame.getContentPane().add(passwordField);
+		
+		passwordField_1 = new JPasswordField();
+		passwordField_1.setBounds(120, 159, 149, 21);
+		frame.getContentPane().add(passwordField_1);
+	}
+}

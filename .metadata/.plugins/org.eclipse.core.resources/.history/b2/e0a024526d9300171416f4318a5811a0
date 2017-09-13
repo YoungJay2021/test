@@ -1,0 +1,47 @@
+package com.etc._09Task;
+
+class MyThread extends Thread{
+	private long time;
+	MyThread(long time){
+		this.time = time;
+	}
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		System.out.println(Thread.currentThread().getName()+" begin...");
+		try {
+			Thread.sleep(this.time);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(Thread.currentThread().getName()+" end...");
+	}
+}
+
+public class Task {
+	//2、	面试题：多线程，三个线程对象，每隔一定时间来执行线程对象1（5秒），
+//	线程对象2（7秒），线程对象3（9秒）
+	public static void main(String[] args) {
+		MyThread my1 = new MyThread(5000);
+		MyThread my2 = new MyThread(7000);
+		MyThread my3 = new MyThread(9000);
+		my1.start();
+		try {
+			my1.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		my2.start();
+		try {
+			my2.join();//只有my2在执行  其他线程要等
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		my3.start();
+	}
+
+}

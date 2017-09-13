@@ -1,0 +1,33 @@
+package com.etc._02txDemo;
+
+import java.util.ArrayList;
+
+public class BankDemo {
+	public static void main(String[] args) {
+		   JDBCUtils util = new JDBCUtils();
+		   util.getConnection();
+		 // 1：查询西门官人的账号是否满足转账条件 (余额>=1000)
+		   String sql = "SELECT * FROM t_account WHERE name=? AND balance>= ?";
+		   ArrayList<Object> params = new ArrayList<Object>();
+		   params.add(0, "西门官人");
+		   params.add(1,1000);
+		  Account account = null;
+		  try {
+			  account = util.findSimpleRefResult(sql, params, Account.class);
+		  } catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		  }
+		  if(account == null){
+			  System.out.println("不可以去");
+		  }else{
+			  System.out.println("可以去");
+		  }
+		  
+		
+//		     2：从西门官人的余额中扣除金额1000
+//		     3：把扣除的金额1000加入到东方姑娘的余额中
+
+	}
+
+}

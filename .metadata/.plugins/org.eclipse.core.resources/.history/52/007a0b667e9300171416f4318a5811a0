@@ -1,0 +1,22 @@
+package com.etc._02LoginStrDemo;
+
+import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+/**
+ * 客户端
+ * @author Administrator
+ *
+ */
+public class LoginClient {
+	public static void main(String[] args) throws UnknownHostException, IOException {
+//		1.	建立客户端Socket，指定服务器位置和端口
+		Socket socket = new Socket("localhost", 8888);
+//		2.	得到Socket读写流
+//		3.	利用流按照一定的协议对socket进行读写操作
+//		4.	使用close()关闭流和Socket
+
+	}
+
+}
